@@ -19,7 +19,6 @@ const MainForm = () => {
                     <SolutionButton/>
                 </div>
             </div>
-
         </>
     );
 };
