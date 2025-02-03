@@ -1,8 +1,8 @@
-import Header from "@/app/component/ui/Header";
-import MainForm from "@/app/mainForm";
 import Image from "next/image";
-import SolutionButton from "@/app/component/buttons/solutionButton";
 import React from "react";
+import Header from "@/app/component/ui/Header";
+import SolutionButton from "@/app/component/buttons/solutionButton";
+import MainCarousel from "@/app/component/ui/mainCarousel";
 
 export default function Home() {
   return (
@@ -23,13 +23,13 @@ export default function Home() {
             </div>
         </div>
 
-        <div className="grid grid-cols-[2fr_4fr_4fr] mb-10 grid-rows-3 text-txt-01 border-b border-opacity-30 border-txt-03 mt-[100px]">
+        <div className="grid grid-cols-[2fr_4fr_4fr] mb-10 grid-rows-[1fr_4fr_4fr] text-txt-01 border-b border-opacity-30 border-txt-03 mt-[100px]">
             <div className="row-span-3 border-r border-opacity-30 border-txt-03 flex justify-center">
-                <span className={'flex flex-col text-nowrap text-txt-point font-bold'}>
+                <span className={'flex flex-col text-nowrap text-txt-point font-bold py-10'}>
                     <h2>Climbing Guide</h2>
                 </span>
             </div>
-            <div className="col-span-2 border-b border-opacity-30 border-txt-03 w-full py-10 px-[120px] font-extrabold text-18">
+            <div className="col-span-2 border-b border-opacity-30 border-txt-03 py-10 px-[120px] font-extrabold text-18">
                 <h3>클라이밍이란? / 소개, 종류</h3>
             </div>
             <div className="col-span-2 row-span-2 w-full py-14 px-[120px]">
@@ -39,7 +39,8 @@ export default function Home() {
                         스포츠 클라이밍과 락(ROCK)클라이밍으로 나뉘며, <br/>
                         실내·실외 구분없이 누구나 쉽게 시작할 수 있습니다.</p>
                 </span>
-            </div>
+                <MainCarousel/>
+             </div>
         </div>
     </main>
   );
