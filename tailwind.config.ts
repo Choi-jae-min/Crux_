@@ -13,7 +13,9 @@ export default {
       fontSize : {
         12 : '12px',
         16 : '16px',
+        18 : '18px',
         24 : '24px',
+        40 : '40px',
         50 : '50px'
       },
       colors: {
