@@ -3,6 +3,7 @@ import React from "react";
 import Header from "@/app/component/ui/Header";
 import SolutionButton from "@/app/component/buttons/solutionButton";
 import MainCarousel from "@/app/component/ui/mainCarousel";
+import SideMenu from "@/app/component/ui/sideMenu";
 
 export default function Home() {
   return (
@@ -25,8 +26,9 @@ export default function Home() {
 
         <div className="grid grid-cols-[2fr_4fr_4fr] mb-10 grid-rows-[1fr_4fr_4fr] text-txt-01 border-b border-opacity-30 border-txt-03 mt-[100px]">
             <div className="row-span-3 border-r border-opacity-30 border-txt-03 flex justify-center">
-                <span className={'flex flex-col text-nowrap text-txt-point font-bold py-10'}>
-                    <h2>Climbing Guide</h2>
+                <span className={'flex flex-col text-nowrap  py-10'}>
+                    <h2 className={'text-txt-point font-bold'}>Climbing Guide</h2>
+                    <SideMenu/>
                 </span>
             </div>
             <div className="col-span-2 border-b border-opacity-30 border-txt-03 py-10 px-[120px] font-extrabold text-18">

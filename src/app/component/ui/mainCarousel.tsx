@@ -64,7 +64,7 @@ const MainCarousel = () => {
                     <div
                         className="flex transition-transform duration-500"
                         style={{
-                            transform: `translateX(calc(-${currentIndex * 100}%))`,
+                            transform: `translateX(calc(-${currentIndex * 100}% + ${offsetX * 10}px))`,
                             cursor: isDragging ? "grabbing" : "grab",
                         }}
                         onMouseDown={handleMouseDown}
