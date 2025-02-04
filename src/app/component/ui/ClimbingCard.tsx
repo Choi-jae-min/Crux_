@@ -6,7 +6,7 @@ interface Props {
 }
 const ClimbingCard:FC<Props> = ({title, description}) => {
     return (
-        <div className={'text-txt-02'}>
+        <div className={'text-txt-02 select-none'}>
             <Image
                 src="/articles/lead_grid.png"
                 width={291}
