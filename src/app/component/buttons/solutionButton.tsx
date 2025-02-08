@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes, FC } from "react";
 import RightArrow from "../../../../public/icons/right_arrow.svg";
 import RightArrowColor from "../../../../public/icons/right_arrow_color.svg";
+import {SlArrowRight} from "react-icons/sl";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;

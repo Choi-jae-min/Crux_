@@ -21,6 +21,7 @@ export default {
         50 : '50px'
       },
       colors: {
+
         txt : {
           'point' : '#E75654',
           '01' : '#333333',

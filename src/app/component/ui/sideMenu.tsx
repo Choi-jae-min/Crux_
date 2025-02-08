@@ -1,6 +1,7 @@
 'use client'
-import { useState } from "react";
+import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import MainButton from "@/app/component/buttons/mainButton";
 
 const SideMenu = () => {
     const [selectedMenu, setSelectedMenu] = useState<string | null>("climbingDesc");
@@ -16,10 +17,11 @@ const SideMenu = () => {
     };
 
     return (
-        <ul className="w-full px-[50px] p-4 select-none text-18">
+        <div className={'flex flex-col justify-between items-center h-full w-full pt-5'}>
+            <ul className="w-full select-none text-18 pl-[70px] pr-5 ">
             <li
                 className={`cursor-pointer pt-10 ${
-                    selectedMenu === "climbingDesc" ? "text-red-500 font-bold list-disc" : "pl-6 list-none"
+                    selectedMenu === "climbingDesc" ? "text-red-500 font-bold list-disc" : " list-none"
                 }`}
                 onClick={() => handleMenuClick("climbingDesc")}
             >
@@ -40,7 +42,7 @@ const SideMenu = () => {
             </li>
             <li
                 className={`cursor-pointer pt-5 ${
-                    selectedMenu === "etiquette" ? "text-red-500 font-bold list-disc" : "pl-6 list-none"
+                    selectedMenu === "etiquette" ? "text-red-500 font-bold list-disc" : "list-none"
                 }`}
                 onClick={() => handleMenuClick("etiquette")}
             >
@@ -61,7 +63,7 @@ const SideMenu = () => {
             </li>
             <li
                 className={`cursor-pointer pt-5 ${
-                    selectedMenu === "holdTypes" ? "text-red-500 font-bold list-disc" : "pl-6 list-none"
+                    selectedMenu === "holdTypes" ? "text-red-500 font-bold list-disc" : "-none"
                 }`}
                 onClick={() => handleMenuClick("holdTypes")}
             >
@@ -82,7 +84,7 @@ const SideMenu = () => {
             </li>
             <li
                 className={`cursor-pointer pt-5 ${
-                    selectedMenu === "terms" ? "text-red-500 font-bold list-disc" : "pl-6 list-none"
+                    selectedMenu === "terms" ? "text-red-500 font-bold list-disc" : "list-none"
                 }`}
                 onClick={() => handleMenuClick("terms")}
             >
@@ -102,6 +104,9 @@ const SideMenu = () => {
                 )}
             </li>
         </ul>
+        <MainButton onClick={() => {
+            console.log('어 동작해 ㅇㅇ')}} text={'View more'}/>
+    </div>
     );
 };
 
