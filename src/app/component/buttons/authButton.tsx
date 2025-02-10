@@ -5,7 +5,7 @@ interface Props {
     loading ? : boolean;
     variant? : 'point' | 'basic';
 }
-const AuthButton:FC<Props> = ({onClick , variant, loading , className , text , disabled}) => {
+const AuthButton:FC<Props> = ({variant, loading , className , text , disabled , onClick}) => {
 
     const getButtonStyle = () => {
         switch (variant) {

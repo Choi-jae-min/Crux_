@@ -5,12 +5,13 @@ import SolutionButton from "@/app/component/buttons/solutionButton";
 import MainCarousel from "@/app/component/ui/mainCarousel";
 import SideMenu from "@/app/component/ui/sideMenu";
 import MainButton from "@/app/component/buttons/mainButton";
+import {IoIosArrowRoundForward} from "react-icons/io";
 
 export default function Home() {
   return (
     <main>
         <Header/>
-        <div id={'main_banner'} className={'relative'}>
+        <article id={'main_banner'} className={'relative'}>
             <Image
                 src="/crux_main01.png"
                 width={3000}
@@ -23,9 +24,9 @@ export default function Home() {
                 <p className={'text-24 font-light pt-[20px] pb-[60px]'}>어려운 문제의 해답을 찾고 같이 Crux를 넘어갑시다.</p>
                 <SolutionButton/>
             </div>
-        </div>
+        </article>
 
-        <div className="grid grid-cols-[2fr_4fr_4fr] mb-10 grid-rows-[1fr_4fr_4fr] text-txt-01 border-b border-opacity-30 border-txt-03 mt-[100px]">
+        <article id={'main_container'} className="grid grid-cols-[2fr_4fr_4fr] mb-10 grid-rows-[1fr_4fr_4fr] text-txt-01 border-b border-opacity-30 border-txt-03 mt-[100px]">
             <div className="row-span-3 border-r border-opacity-30 border-txt-03 flex justify-center">
                 <span className={'flex flex-col text-nowrap w-full items-center py-10'}>
                         <h2 className={'text-txt-point font-bold text-28'}>Climbing Guide</h2>
@@ -44,7 +45,17 @@ export default function Home() {
                 </span>
                 <MainCarousel/>
              </div>
-        </div>
+        </article>
+
+        <article id={'Popular_posts mx-15'}>
+            <div className={'flex items-end justify-between'}>
+                <h3 className={'text-40 font-bold text-txt-01'}>인기 게시물</h3>
+                <span className={'flex items-center text-txt-03'}>
+                    <p>더보기</p>
+                    <IoIosArrowRoundForward />
+                </span>
+            </div>
+        </article>
     </main>
   );
 }
