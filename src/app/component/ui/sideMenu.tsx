@@ -17,8 +17,8 @@ const SideMenu = () => {
     };
 
     return (
-        <div className={'flex flex-col justify-between items-center h-full w-full pt-5'}>
-            <ul className="w-full select-none text-18 pl-[70px] pr-5 ">
+        <div className={'flex flex-col justify-between items-center h-full w-full pt-5 px-4'}>
+            <ul className="w-full select-none text-18 pl-[50px] pr-5 ">
             <li
                 className={`cursor-pointer pt-10 ${
                     selectedMenu === "climbingDesc" ? "text-red-500 font-bold list-disc" : " list-none"

@@ -43,7 +43,7 @@ const MainCarousel = () => {
     return (
         <div>
             <div className="flex justify-between items-center pt-10">
-                <span className="flex font-bold text-24">
+                <span className="flex font-bold text-24 text-nowrap">
                     <p
                         onClick={() => setCurrentIndex(0)}
                         className={`cursor-pointer select-none border-r pr-5 ${currentIndex !== 0 ? 'text-txt-03' : ''} transition-colors`}
