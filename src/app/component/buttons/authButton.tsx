@@ -6,7 +6,7 @@ interface Props {
     variant? : 'point' | 'basic';
     text?: string;
 }
-const AuthButton:FC<Props> = ({variant, loading , className , disabled , onClick , text}) => {
+const AuthButton:FC<Props> = ({variant, loading , className  , onClick , text}) => {
 
     const getButtonStyle = () => {
         switch (variant) {
@@ -21,7 +21,6 @@ const AuthButton:FC<Props> = ({variant, loading , className , disabled , onClick
 
     return (
         <button
-            disabled={disabled}
             onClick={onClick}
             className={`${getButtonStyle()} text-14 xl:text-16 shadow rounded-full w-[140px] xl:w-[172px] py-2.5 text-center ${className} active:shadow-none`}>
             {text}
