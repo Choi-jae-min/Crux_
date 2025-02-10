@@ -6,6 +6,7 @@ import MainCarousel from "@/app/component/ui/mainCarousel";
 import SideMenu from "@/app/component/ui/sideMenu";
 import MainButton from "@/app/component/buttons/mainButton";
 import {IoIosArrowRoundForward} from "react-icons/io";
+import MainBadge from "@/app/component/badges/mainBadge";
 
 export default function Home() {
   return (
@@ -48,6 +49,7 @@ export default function Home() {
         </article>
 
         <article id={'Popular_posts mx-15'}>
+            <MainBadge text={'Community'} className={'max-w-[120px]'}/>
             <div className={'flex items-end justify-between'}>
                 <h3 className={'text-40 font-bold text-txt-01'}>인기 게시물</h3>
                 <span className={'flex items-center text-txt-03'}>
