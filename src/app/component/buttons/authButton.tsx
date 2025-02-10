@@ -4,8 +4,9 @@ interface Props {
     className? : string;
     loading ? : boolean;
     variant? : 'point' | 'basic';
+    text?: string;
 }
-const AuthButton:FC<Props> = ({variant, loading , className , text , disabled , onClick}) => {
+const AuthButton:FC<Props> = ({variant, loading , className , disabled , onClick , text}) => {
 
     const getButtonStyle = () => {
         switch (variant) {
