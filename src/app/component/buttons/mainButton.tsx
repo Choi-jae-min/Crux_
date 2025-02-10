@@ -5,6 +5,7 @@ import {SlArrowRight} from "react-icons/sl";
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     className? : string;
     loading ? : boolean;
+    text : string;
 }
 const MainButton:FC<Props> = ({className , onClick, text, loading}) => {
     return (

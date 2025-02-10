@@ -4,6 +4,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
     className? : string;
     loading ? : boolean;
     variant? : 'point' | 'basic';
+    text : string;
 }
 const AuthButton:FC<Props> = ({variant, loading , className  , onClick , text}) => {
 
