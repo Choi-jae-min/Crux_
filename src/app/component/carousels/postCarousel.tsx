@@ -7,7 +7,7 @@ const PostCarousel = () => {
     console.log(post_list)
     return (
         <div>
-            123
+
         </div>
     );
 };

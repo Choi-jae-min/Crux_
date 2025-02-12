@@ -3,11 +3,12 @@ import React from "react";
 import Header from "@/app/component/ui/Header";
 import SolutionButton from "@/app/component/buttons/solutionButton";
 import SideMenu from "@/app/component/ui/sideMenu";
-import MainButton from "@/app/component/buttons/mainButton";
 import {IoIosArrowRoundForward} from "react-icons/io";
 import MainBadge from "@/app/component/badges/mainBadge";
 import MainCarousel from "@/app/component/carousels/mainCarousel";
-import PostCarousel from "@/app/component/carousels/postCarousel";
+import PostCard from "@/app/component/cards/postCard";
+import {getPostList} from "@/mock/post_mock";
+import PopularPost from "@/app/component/popularPost";
 
 export default function Home() {
   return (
@@ -48,18 +49,7 @@ export default function Home() {
                 <MainCarousel/>
              </div>
         </article>
-
-        <article id={'Popular_posts'} className={'mx-14'}>
-            <MainBadge text={'Community'} className={'max-w-[120px]'}/>
-            <div className={'flex items-end justify-between py-4'}>
-                <h3 className={'text-40 font-bold text-txt-01'}>인기 게시물</h3>
-                <span className={'flex items-center text-txt-03'}>
-                    <p>더보기</p>
-                    <IoIosArrowRoundForward />
-                </span>
-            </div>
-            <PostCarousel/>
-        </article>
+        <PopularPost/>
     </main>
   );
 }

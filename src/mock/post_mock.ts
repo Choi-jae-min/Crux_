@@ -1,3 +1,5 @@
+import {getUser} from "@/mock/user_mock";
+
 export interface IPost {
     id: number;
     title: string;
@@ -19,16 +21,18 @@ export interface IComment {
 
 export interface ILike {
     id: number;
-    post_id: number;  // 어떤 게시글에 대한 좋아요인지
-    user_id: number;  // 누가 좋아요 했는지
+    post_id: number;
+    user_id: number;
     created_at: Date;
 }
 
 export interface IPostImage {
     id: number;
-    post_id: number;  // 어떤 게시글의 이미지인지
+    post_id: number;
     image_url: string;
 }
+
+
 
 
 const post_mock : IPost[]  = [
@@ -66,7 +70,7 @@ const post_mock : IPost[]  = [
         id : 1,
         title : "솔직히 이번 알레 갈색 좀 물갈 아니냐",
         body : "꼬우면 물갈이지 뭐",
-        user_id : 1,
+        user_id : 4,
         thumbnail_url : '',
         climbing_center : '혜화 알레 클라이밍',
         like_count : 1203,
@@ -76,7 +80,7 @@ const post_mock : IPost[]  = [
         id : 1,
         title : "다이나믹 맛집 볼더스",
         body : "클라이밍 배트행 존맛이네ㅋㅋㅋㅋㅋㅋ",
-        user_id : 1,
+        user_id : 3,
         thumbnail_url : '',
         climbing_center : '크래거 클라이밍',
         like_count : 21,
@@ -87,7 +91,7 @@ const post_mock : IPost[]  = [
         id : 1,
         title : "만약 카운트가 같으면 어쩔건데",
         body : "like_count test",
-        user_id : 1,
+        user_id : 2,
         thumbnail_url : '',
         climbing_center : '크래거 클라이밍',
         like_count : 21,
@@ -121,8 +125,18 @@ const images: IPostImage[] = [
 ];
 
 export const getPostList = () => {
-    return post_mock;
-}
+    return post_mock.map(post => {
+        const user = getUser(post.user_id);
+        if(user.name === "Unknown") {
+            return null;
+        }
+        return {
+            ...post,
+            user
+        };
+    });
+};
+
 export const getPostWithDetails = (postId: number) => {
     const post = post_mock.find(p => p.id === postId);
     if (!post) return null;
