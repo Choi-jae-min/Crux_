@@ -8,12 +8,14 @@ import {AiOutlineHeart, AiOutlineMessage} from "react-icons/ai";
 import Image from "next/image";
 
 const PopularPost = () => {
-    const [topPostList, setTopPostList] = React.useState([]);
-    const [postList, setPostList] = React.useState([]);
+    const [topPostList, setTopPostList] = React.useState<any[]>([]);
+    const [postList, setPostList] = React.useState<any[]>([]);
     useEffect(() => {
         const post_mock_data = getPostList();
-        setTopPostList(post_mock_data.slice(0, 5));
-        setPostList(post_mock_data.slice(5 , post_mock_data.length));
+        if(post_mock_data){
+            setTopPostList(post_mock_data.slice(0, 5));
+            setPostList(post_mock_data.slice(5 , post_mock_data.length));
+        }
     }, []);
 
     return (
