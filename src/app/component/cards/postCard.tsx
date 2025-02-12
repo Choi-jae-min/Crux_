@@ -14,7 +14,7 @@ const PostCard:FC<Props> = ({postData ,user_name}) => {
                 <Image className={'absolute object-cover object-[50% 100%] rounded-xl'} src='/articles/image.png' alt="post image" fill/>
             </div>
             <h3 className={'pt-2 overflow-ellipsis font-semibold'}>{postData.title}</h3>
-            <p className={'text-14 text-txt-03 overflow-ellipsis pt-1'}>{user_name}</p>
+            <p className={'text-14 text-txt-03 overflow-ellipsis pt-1'}>{user_name} - {postData.climbing_center}</p>
         </div>
     );
 };

@@ -67,7 +67,7 @@ const post_mock : IPost[]  = [
         created_at: new Date(),
     },
     {
-        id : 1,
+        id : 4,
         title : "솔직히 이번 알레 갈색 좀 물갈 아니냐",
         body : "꼬우면 물갈이지 뭐",
         user_id : 4,
@@ -77,7 +77,7 @@ const post_mock : IPost[]  = [
         created_at: new Date(),
     },
     {
-        id : 1,
+        id : 5,
         title : "다이나믹 맛집 볼더스",
         body : "클라이밍 배트행 존맛이네ㅋㅋㅋㅋㅋㅋ",
         user_id : 3,
@@ -88,7 +88,7 @@ const post_mock : IPost[]  = [
 
     },
     {
-        id : 1,
+        id : 6,
         title : "만약 카운트가 같으면 어쩔건데",
         body : "like_count test",
         user_id : 2,
@@ -97,15 +97,63 @@ const post_mock : IPost[]  = [
         like_count : 21,
         created_at: new Date(),
     },
+    {
+        id : 7,
+        title : "test test",
+        body : "like_count test",
+        user_id : 4,
+        thumbnail_url : '',
+        climbing_center : '크래거 클라이밍',
+        like_count : 2,
+        created_at: new Date(),
+    },
+    {
+        id : 8,
+        title : "이웃 수시로 긴장상태이기도하고 밤에 잠을 잘 못자는데 병원 어디로 가야할까요?",
+        body : "like_count test",
+        user_id : 4,
+        thumbnail_url : '',
+        climbing_center : '크래거 클라이밍',
+        like_count : 7,
+        created_at: new Date(),
+    },
+    {
+        id : 10,
+        title : "서울에 설치됐다는 개방형 흡연부스",
+        body : "like_count test",
+        user_id : 4,
+        thumbnail_url : '',
+        climbing_center : '크래거 클라이밍',
+        like_count : 15,
+        created_at: new Date(),
+    },
+    {
+        id : 11,
+        title : "낚시 비수기에 새로운 경험(클라이밍) 체험을 했네요",
+        body : "like_count test",
+        user_id : 4,
+        thumbnail_url : '',
+        climbing_center : '크래거 클라이밍',
+        like_count : 12,
+        created_at: new Date(),
+    },
 ]
 
 const comments: IComment[] = [
-    { id: 1, post_id: 1, user_id: 2, body: "오 여기 가보고 싶다!", created_at: new Date() },
-    { id: 2, post_id: 1, user_id: 3, body: "진짜 다이나믹한 코스 많음", created_at: new Date() },
-    { id: 3, post_id: 1, user_id: 4, body: "볼더스 최고!", created_at: new Date() },
-
-    { id: 4, post_id: 3, user_id: 5, body: "이 난이도 진짜 빡셈", created_at: new Date() },
-    { id: 5, post_id: 3, user_id: 6, body: "같이 공략하실 분~", created_at: new Date() }
+    { id: 1, post_id: 11, user_id: 2, body: "오 여기 가보고 싶다!", created_at: new Date() },
+    { id: 2, post_id: 10, user_id: 3, body: "진짜 다이나믹한 코스 많음", created_at: new Date() },
+    { id: 2, post_id: 10, user_id: 3, body: "진짜 다이나믹한 코스 많음", created_at: new Date() },
+    { id: 2, post_id: 10, user_id: 3, body: "진짜 다이나믹한 코스 많음", created_at: new Date() },
+    { id: 2, post_id: 10, user_id: 3, body: "진짜 다이나믹한 코스 많음", created_at: new Date() },
+    { id: 2, post_id: 10, user_id: 3, body: "진짜 다이나믹한 코스 많음", created_at: new Date() },
+    { id: 3, post_id: 9, user_id: 4, body: "볼더스 최고!", created_at: new Date() },
+    { id: 3, post_id: 8, user_id: 4, body: "볼더스 최고!", created_at: new Date() },
+    { id: 3, post_id: 8, user_id: 4, body: "볼더스 최고!", created_at: new Date() },
+    { id: 3, post_id: 8, user_id: 4, body: "볼더스 최고!", created_at: new Date() },
+    { id: 3, post_id: 7, user_id: 4, body: "볼더스 최고!", created_at: new Date() },
+    { id: 3, post_id: 7, user_id: 4, body: "볼더스 최고!", created_at: new Date() },
+    { id: 4, post_id: 6, user_id: 5, body: "이 난이도 진짜 빡셈", created_at: new Date() },
+    { id: 5, post_id: 6, user_id: 6, body: "같이 공략하실 분~", created_at: new Date() }
 ];
 
 const likes: ILike[] = [
@@ -130,9 +178,11 @@ export const getPostList = () => {
         if(user.name === "Unknown") {
             return null;
         }
+        const comments_len= comments.filter(c => c.post_id === post.id).length;
         return {
             ...post,
-            user
+            user,
+            comments_len,
         };
     });
 };
