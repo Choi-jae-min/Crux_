@@ -1,8 +1,16 @@
 import React from 'react';
-import AuthButton from "@/app/component/buttons/authButton";
 import HeaderRight from "@/app/component/ui/header_right";
+import {createClient, isSessionValid} from "@/utils/supabase/server";
+import {redirect} from "next/navigation";
 
-const Header = () => {
+const Header = async () => {
+    const supabase = await createClient()
+    const { data : {session}, error } = await supabase.auth.getSession()
+
+    if(error) {
+        return redirect(`/error?error=${error}1`)
+    }
+    const sessionValid = isSessionValid(session);
     return (
         <header className={'flex items-center justify-between mx-auto px-[60px] py-[20px] select-none'}>
             <span className={'font-[1000] flex text-24'}>
@@ -20,7 +28,7 @@ const Header = () => {
                 <li>About us</li>
             </ul>
 
-            <HeaderRight/>
+            <HeaderRight isLogin={sessionValid}/>
         </header>
     );
 };

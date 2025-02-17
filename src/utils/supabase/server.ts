@@ -27,3 +27,12 @@ export async function createClient() {
         }
     )
 }
+export function isSessionValid(session) {
+    if (!session || !session.access_token || !session.expires_at) {
+        return false;
+    }
+
+    const currentTime = Math.floor(Date.now() / 1000); // 현재 시간 (초 단위)
+    return session.expires_at > currentTime; // 만료 시간이 현재 시간보다 크면 유효
+}
+

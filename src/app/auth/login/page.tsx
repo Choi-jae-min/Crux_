@@ -1,5 +1,5 @@
 import React from 'react';
-import {login, signup} from "@/app/login/actions";
+import {login} from "@/app/auth/actions";
 
 const Page = () => {
     return (
@@ -8,8 +8,7 @@ const Page = () => {
             <input className={'border rounded'} id="email" name="email" type="email" required />
             <label htmlFor="password">Password:</label>
             <input className={'border rounded'} id="password" name="password" type="password" required />
-            <button className={'border rounded px-2'} formAction={login}>Log in</button>
-            <button className={'border rounded px-2'} formAction={signup}>Sign up</button>
+            <button className={'border rounded px-2'} formAction={login}>login</button>
         </form>
     );
 };
