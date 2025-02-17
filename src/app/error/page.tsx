@@ -1,5 +1,5 @@
 import {use} from "react";
-export default function ErrorPage(props : {searchParams: any }) {
+export default function ErrorPage(props : {searchParams: Promise<{ [key: string]: string | undefined }> }) {
     const searchParams = use(props.searchParams)
     const message = searchParams.message || 'No message provided'
 
