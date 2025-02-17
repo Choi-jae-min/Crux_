@@ -8,7 +8,7 @@ const Header = async () => {
     const { data : {session}, error } = await supabase.auth.getSession()
 
     if(!error) {
-        return redirect(`/error?message=tlqkf`)
+        return redirect(`/error?message=${error}`)
     }
     const sessionValid = isSessionValid(session);
     return (
