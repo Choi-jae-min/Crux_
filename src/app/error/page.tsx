@@ -1,6 +1,5 @@
 import {use} from "react";
-
-export default function ErrorPage(props) {
+export default function ErrorPage(props : {searchParams: any }) {
     const searchParams = use(props.searchParams)
     const message = searchParams.message
 
