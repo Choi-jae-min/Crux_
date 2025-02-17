@@ -23,8 +23,8 @@ export default function Home() {
             />
 
             <div className={'absolute w-full bottom-[5%] text-center transform text-txt-01'}>
-                <h1 className={'font-extrabold text-50'}>CRUX, 해답을 찾다.</h1>
-                <p className={'text-24 font-light pt-[20px] pb-[60px]'}>어려운 문제의 해답을 찾고 같이 Crux를 넘어갑시다.</p>
+                <h1 className={'font-extrabold xl:text-50'}>CRUX, 해답을 찾다.</h1>
+                <p className={'xl:text-24 font-light xl:pt-[20px] pb-5 xl:pb-[60px]'}>어려운 문제의 해답을 찾고 같이 Crux를 넘어갑시다.</p>
                 <SolutionButton/>
             </div>
         </article>
