@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
+import {Session} from "@supabase/auth-js";
 
 export async function createClient() {
     const cookieStore = await cookies()
@@ -27,7 +28,7 @@ export async function createClient() {
         }
     )
 }
-export function isSessionValid(session : any) {
+export function isSessionValid(session : Session) {
     if (!session || !session.access_token || !session.expires_at) {
         return false;
     }
