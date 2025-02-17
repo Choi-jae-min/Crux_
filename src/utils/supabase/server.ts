@@ -27,7 +27,7 @@ export async function createClient() {
         }
     )
 }
-export function isSessionValid(session) {
+export function isSessionValid(session : any) {
     if (!session || !session.access_token || !session.expires_at) {
         return false;
     }
