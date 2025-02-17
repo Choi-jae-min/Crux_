@@ -1,11 +1,9 @@
-'use client'
-import React from 'react';
-import {useSearchParams} from "next/navigation";
+import {use} from "react";
 
-export default function ErrorPage() {
-    const searchParams = useSearchParams()
+export default function ErrorPage(props) {
+    const searchParams = use(props.searchParams)
+    const message = searchParams.message
 
-    const error = searchParams.get('error')
-    return <p className={'text-txt-01 text-center pt-10'}>Sorry, something went wrong <br/>{error}</p>
+    return <p className={'text-txt-01 text-center pt-10'}>Sorry, something went wrong <br/>{message}</p>
 }
 
